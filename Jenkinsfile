@@ -1,43 +1,21 @@
 #!groovy
-<<<<<<< HEAD
 
-// Отключаем параллельные сборки для этой задачи
 properties([disableConcurrentBuilds()])
 
 pipeline {
-    agent any // Запускаем задачу на любом доступном узле
+    agent any
 
     stages {
-        stage('Check Jenkinsfile') {
+        stage('Checkout') {
             steps {
-                // Выводим текущий рабочий каталог
-                sh 'pwd'
+                checkout scm
+            }
+        }
 
-                // Проверяем наличие файла Jenkinsfile в рабочем каталоге
-                sh 'ls -l Jenkinsfile || echo "Jenkinsfile not found"'
+        stage('Run Tests') {
+            steps {
+                sh 'mvn test'
             }
         }
     }
 }
-=======
-// Check ub1 properties
-properties([disableConcurrentBuilds()])
-
-pipeline {
-    agent {
-        label 'master'
-        }
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-        timestamps()
-    }
-    stages {
-        stage("First step") {
-            steps {
-                sh 'echo \'test\''
-            }
-        }
-
-    }
-}
->>>>>>> origin/master
