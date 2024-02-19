@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Получаем код из репозитория
-                git 'https://github.com/your-username/your-repo.git'
+                // Получаем код из репозитория с использованием токена доступа GitHub
+                git credentialsId: '10', url: 'https://github.com/Mainnn/TestJOB.git'
             }
         }
 
