@@ -1,21 +1,33 @@
-#!groovy
-
-properties([disableConcurrentBuilds()])
-
 pipeline {
-    agent any
+    agent any // Используйте любой доступный агент для выполнения задачи
 
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                // Получаем код из репозитория
+                git 'https://github.com/your-username/your-repo.git'
             }
         }
 
-        stage('Run Tests') {
+        stage('Build') {
             steps {
-                sh './mvnw test'
+                // Запускаем Maven сборку
+                sh 'mvn clean install'
             }
+        }
+
+        stage('Test') {
+            steps {
+                // Запускаем тесты с помощью Maven
+                sh 'mvn test'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Завершаем работу агента после выполнения всех этапов
+            cleanWs()
         }
     }
 }
