@@ -11,7 +11,7 @@ class TestJobApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println("PIZDA");
+        System.out.println("PIZDA1");
     }
     @Test
     public void testJenkinsJob() {
