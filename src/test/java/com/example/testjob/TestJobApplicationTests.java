@@ -13,17 +13,6 @@ class TestJobApplicationTests {
     void contextLoads() {
         System.out.println("PIZDA1");
     }
-    @Test
-    public void testJenkinsJob() {
-        // Проверяем, что сборка завершилась успешно
-        boolean buildSuccessful = true; // Здесь нужно проверить реальный статус сборки в Jenkins
-        assertTrue("Сборка завершилась с ошибкой", buildSuccessful);
-    }
-    @Test
-    public void testJenkinsJobTOw() {
-        // Проверяем, что сборка завершилась успешно
-        boolean buildSuccessful = false; // Здесь нужно проверить реальный статус сборки в Jenkins
-        assertFalse("Сборка завершилась с ошибкой", buildSuccessful);
-    }
+
 
 }
