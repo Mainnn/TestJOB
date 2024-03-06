@@ -13,6 +13,10 @@ class TestJobApplicationTests {
     void contextLoads() {
         System.out.println("PIZDA1");
     }
+    @Test
+    void contextLoad1s() {
+        System.out.println("PIZDA1");
+    }
 
 
 }
