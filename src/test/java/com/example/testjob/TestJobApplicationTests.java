@@ -15,7 +15,7 @@ class TestJobApplicationTests {
     }
     @Test
     void contextLoad1s() {
-        System.out.println("PIZDA1");
+        System.out.println("TEstVersion");
     }
 
 
